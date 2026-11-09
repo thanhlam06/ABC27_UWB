@@ -1,0 +1,35 @@
+{
+  "selected_stage1_threshold": 0.36,
+  "val_stage1_rejection_pct": 79.65,
+  "val_stage1_recall": 0.9851,
+  "benchmarks": [
+    {
+      "Pipeline": "Official Energy Baseline",
+      "AP@0.1": 0.1835,
+      "AP@0.3": 0.1688,
+      "AP@0.5": 0.0927,
+      "AP@0.7": 0.0105,
+      "mAP_tIoU>=0.5": 0.035,
+      "Rank_F1": 0.3151,
+      "F1@0.3": 0.3383,
+      "F1@0.5": 0.2488,
+      "F1@0.7": 0.0597,
+      "FA/h@0.3": 48.81
+    },
+    {
+      "Pipeline": "Bi-Level Hybrid Cascade (S1=0.36)",
+      "AP@0.1": 0.8866,
+      "AP@0.3": 0.8182,
+      "AP@0.5": 0.526,
+      "AP@0.7": 0.0295,
+      "mAP_tIoU>=0.5": 0.2281,
+      "Rank_F1": 0.6835,
+      "F1@0.3": 0.7342,
+      "F1@0.5": 0.5443,
+      "F1@0.7": 0.1013,
+      "FA/h@0.3": 16.11
+    }
+  ],
+  "test_events": 113,
+  "test_mean_rejection_pct": 79.98
+}

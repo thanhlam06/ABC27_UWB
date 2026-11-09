@@ -1,0 +1,7 @@
+background_tau_s: 3.0
+energy_percentile: 98.0
+energy_min_duration_s: 0.6
+energy_merge_gap_s: 0.8
+window_frames: 200
+hop_frames: 50
+logistic_threshold: 0.85

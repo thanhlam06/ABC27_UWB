@@ -1,0 +1,91 @@
+{
+  "module1_eda": {
+    "n_frames": 30000,
+    "n_radars": 3,
+    "n_bins": 368,
+    "adc_min": 5583.337890625,
+    "adc_max": 47992.5703125,
+    "n_falls": 3,
+    "n_adls": 24,
+    "fall_frames": 370,
+    "adl_frames": 12475,
+    "empty_frames": 17155,
+    "imbalance_ratio": 80.08108108108108,
+    "plots": [
+      "D:\\Desktop\\ABC27\\uwb_fall_pipeline\\outputs\\module1_duration_kde.png",
+      "D:\\Desktop\\ABC27\\uwb_fall_pipeline\\outputs\\module1_class_imbalance.png",
+      "D:\\Desktop\\ABC27\\uwb_fall_pipeline\\outputs\\module1_raw_rtm_fall.png"
+    ]
+  },
+  "module2_preprocessing": {
+    "ema_alpha": 0.95,
+    "svd_k": 2,
+    "ema_runtime_s": 0.6076,
+    "svd_runtime_s": 8.4848
+  },
+  "module3_evaluation": [
+    {
+      "Stage / Method": "Raw Data",
+      "FALL_01 SCR (dB)": -6.07,
+      "Mean Fall SCR (dB)": -5.79,
+      "SCR Gain vs Raw (dB)": 0.0,
+      "Empty-Frame L2 Norm": 424617.34,
+      "Per-Bin Empty RMS": 22134.71,
+      "Clutter Suppression (%)": 0.0
+    },
+    {
+      "Stage / Method": "EMA Filtered (\u03b1=0.95)",
+      "FALL_01 SCR (dB)": 20.92,
+      "Mean Fall SCR (dB)": 27.62,
+      "SCR Gain vs Raw (dB)": 33.41,
+      "Empty-Frame L2 Norm": 466.65,
+      "Per-Bin Empty RMS": 24.33,
+      "Clutter Suppression (%)": 99.89
+    },
+    {
+      "Stage / Method": "SVD Filtered (K=2)",
+      "FALL_01 SCR (dB)": 41.58,
+      "Mean Fall SCR (dB)": 41.64,
+      "SCR Gain vs Raw (dB)": 47.43,
+      "Empty-Frame L2 Norm": 68.73,
+      "Per-Bin Empty RMS": 3.58,
+      "Clutter Suppression (%)": 99.984
+    }
+  ],
+  "module4_ml_baseline": {
+    "primary_method": "SVD Preprocessed (K=2)",
+    "feature_importances": {
+      "Mean": 0.0188,
+      "Variance": 0.2679,
+      "Skewness": 0.1497,
+      "Kurtosis": 0.13,
+      "Max_Peak": 0.4336
+    },
+    "stream_comparison": [
+      {
+        "Input Stream": "Raw Stream (Unfiltered)",
+        "Fall Precision (OOF)": 0.24,
+        "Fall Recall (OOF)": 0.24,
+        "Fall F1-Score (OOF)": 0.24,
+        "TP / FP / FN": "6 / 19 / 19",
+        "Hold-Out Fall F1": 0.3158
+      },
+      {
+        "Input Stream": "EMA Preprocessed (\u03b1=0.95)",
+        "Fall Precision (OOF)": 0.7273,
+        "Fall Recall (OOF)": 0.96,
+        "Fall F1-Score (OOF)": 0.8276,
+        "TP / FP / FN": "24 / 9 / 1",
+        "Hold-Out Fall F1": 0.6957
+      },
+      {
+        "Input Stream": "SVD Preprocessed (K=2)",
+        "Fall Precision (OOF)": 0.8889,
+        "Fall Recall (OOF)": 0.96,
+        "Fall F1-Score (OOF)": 0.9231,
+        "TP / FP / FN": "24 / 3 / 1",
+        "Hold-Out Fall F1": 0.9412
+      }
+    ]
+  }
+}

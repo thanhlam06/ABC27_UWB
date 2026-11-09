@@ -1,0 +1,14 @@
+# Public planning seed for train and validation. The official test seed is not here.
+seed: 2027
+rate_hz: 50
+stream_seconds: 1800
+fade_seconds: 0.2
+margin_before_s: [3.0, 8.0]
+margin_after_s: [5.0, 10.0]
+adl_chunk_s: [8.0, 20.0]
+adl_uses:
+  train: 3
+  val: 2
+  test: 2
+fall_uses: 1
+target_falls_per_hour: 57.1864
