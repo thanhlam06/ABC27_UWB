@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Bỏ qua data và models để tránh phình to Repo
+/data/
+/abc2027_uwb_train_v1/data/
+*.h5
+*.npy
+*.npz
+*.zip
+models/*.pth
+models/*.pt
+checkpoints/*.pth
+checkpoints/*.pt
+uwb_tal_pipeline/outputs/*.pth
+uwb_tal_pipeline/outputs/*.pt
+
+# Bỏ qua các bản nháp notebook trùng lặp
+*prompt hybrid.ipynb
+*_kết quả.ipynb
